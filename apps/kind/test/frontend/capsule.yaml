@@ -12,7 +12,7 @@ apiVersion: rig.dev/v1alpha2
 kind: Capsule
 metadata:
   annotations:
-    rig.dev/rollout: "2"
+    rig.dev/rollout: "3"
   creationTimestamp: null
   name: frontend
   namespace: test
@@ -22,7 +22,7 @@ spec:
   scale:
     horizontal:
       instances:
-        min: 2
+        min: 3
     vertical:
       cpu:
         request: 200m
