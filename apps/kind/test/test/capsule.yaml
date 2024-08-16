@@ -12,13 +12,16 @@ apiVersion: rig.dev/v1alpha2
 kind: Capsule
 metadata:
   annotations:
-    rig.dev/rollout: "13"
+    rig.dev/rollout: "14"
   creationTimestamp: null
   name: test
   namespace: test
 spec:
   env: {}
   image: index.docker.io/library/nginx:latest@sha256:447a8665cc1dab95b1ca778e162215839ccbb9189104c79d7ec3a81e14577add
+  interfaces:
+  - name: http
+    port: 80
   scale:
     horizontal:
       instances:
