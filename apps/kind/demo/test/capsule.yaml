@@ -1,0 +1,33 @@
+---
+apiVersion: v1
+data:
+  RIG_PROJECT_ID: demo
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: test
+  namespace: demo
+---
+apiVersion: rig.dev/v1alpha2
+kind: Capsule
+metadata:
+  annotations:
+    rig.dev/rollout: "1"
+  creationTimestamp: null
+  name: test
+  namespace: demo
+spec:
+  env: {}
+  image: index.docker.io/library/nginx:latest@sha256:28402db69fec7c17e179ea87882667f1e054391138f77ffaf0c3eb388efc3ffb
+  scale:
+    horizontal:
+      cpuTarget: {}
+      instances:
+        min: 1
+    vertical:
+      cpu:
+        request: 200m
+      gpu:
+        request: "0"
+      memory:
+        request: 256Mi
